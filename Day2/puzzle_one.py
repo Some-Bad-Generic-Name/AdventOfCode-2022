@@ -1,7 +1,7 @@
 score = 0
 
 
-def Draw(string):
+def draw(string):
     value = 3
     if (string[0] == 'A'):
         value += 1
@@ -13,7 +13,7 @@ def Draw(string):
     return value
 
 
-def Win(string):
+def win(string):
     value = 6
     if (string[1] == 'X'):
         value += 1
@@ -25,7 +25,7 @@ def Win(string):
     return value
 
 
-def Loss(string):
+def loss(string):
     value = 0
     if (string[1] == 'X'):
         value += 1
@@ -46,10 +46,10 @@ except:
 for items in input_file:
     throws = items.replace(" ", "")
     if (throws[0] == 'A' and throws[1] == 'X' or throws[0] == 'B' and throws[1] == 'Y' or throws[0] == 'C' and throws[1] == 'Z'):
-        score += Draw(throws)
+        score += draw(throws)
     if (throws[0] == 'A' and throws[1] == 'Y' or throws[0] == 'B' and throws[1] == 'Z' or throws[0] == 'C' and throws[1] == 'X'):
-        score += Win(throws)
+        score += win(throws)
     if (throws[0] == 'A' and throws[1] == 'Z' or throws[0] == 'B' and throws[1] == 'X' or throws[0] == 'C' and throws[1] == 'Y'):
-        score += Loss(throws)
+        score += loss(throws)
 
 print(score)
